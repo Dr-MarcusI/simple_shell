@@ -1,11 +1,19 @@
 #include "shell.h"
 
 /**
+<<<<<<< HEAD
  * _getline - read one line from the prompt.
  * @data: struct for the program's data
  * Return: reading counting bytes.
  */
 
+=======
+* _getline - read one line from the prompt.
+* @data: struct for the program's data
+*
+* Return: reading counting bytes.
+*/
+>>>>>>> 969fb5d727272a540d42ea751fabe6267750af76
 int _getline(data_of_program *data)
 {
 	char buff[BUFFER_SIZE] = {'\0'};
@@ -16,7 +24,11 @@ int _getline(data_of_program *data)
 	/* check if doesnot exist more commands in the array */
 	/* and checks the logical operators */
 	if (!array_commands[0] || (array_operators[0] == '&' && errno != 0) ||
+<<<<<<< HEAD
 			(array_operators[0] == '|' && errno == 0))
+=======
+		(array_operators[0] == '|' && errno == 0))
+>>>>>>> 969fb5d727272a540d42ea751fabe6267750af76
 	{
 		/*free the memory allocated in the array if it exists */
 		for (i = 0; array_commands[i]; i++)
@@ -32,7 +44,11 @@ int _getline(data_of_program *data)
 
 		/* split lines for \n or ; */
 		i = 0;
+<<<<<<< HEAD
 		d0 {
+=======
+		do {
+>>>>>>> 969fb5d727272a540d42ea751fabe6267750af76
 			array_commands[i] = str_duplicate(_strtok(i ? NULL : buff, "\n;"));
 			/*checks and split for && and || operators*/
 			i = check_logic_ops(array_commands, i, array_operators);
@@ -50,6 +66,7 @@ int _getline(data_of_program *data)
 	return (str_length(data->input_line));
 }
 
+<<<<<<< HEAD
 /**
  * check_logic_ops - checks and split for && and || operators
  * @array_commands: array of the commands.
@@ -59,6 +76,17 @@ int _getline(data_of_program *data)
  * Return: index of the last command in the array_commands.
  */
 
+=======
+
+/**
+* check_logic_ops - checks and split for && and || operators
+* @array_commands: array of the commands.
+* @i: index in the array_commands to be checked
+* @array_operators: array of the logical operators for each previous command
+*
+* Return: index of the last command in the array_commands.
+*/
+>>>>>>> 969fb5d727272a540d42ea751fabe6267750af76
 int check_logic_ops(char *array_commands[], int i, char array_operators[])
 {
 	char *temp = NULL;
