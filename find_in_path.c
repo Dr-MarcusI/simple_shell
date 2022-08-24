@@ -7,6 +7,7 @@ int check_file(char *full_path);
  * @data: a pointer to the program's data
  * Return: 0 if success, errcode otherwise
  */
+
 int find_program(data_of_program *data)
 {
 	int i = 0, ret_code = 0;
@@ -55,6 +56,7 @@ int find_program(data_of_program *data)
  * @data: a pointer to the program's data
  * Return: array of path directories
  */
+
 char **tokenize_path(data_of_program *data)
 {
 	int i = 0;
@@ -101,6 +103,7 @@ char **tokenize_path(data_of_program *data)
  * @full_path: pointer to the full file name
  * Return: 0 on success, or error code if it exists.
  */
+
 int check_file(char *full_path)
 {
 	struct stat sb;
